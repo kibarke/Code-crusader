@@ -34,6 +34,11 @@ function displayInfo(data) {
 
     container.append(movieYear);
 
+    const moviePlot = document.createElement('p');
+    moviePlot.textContent = data.Plot;
+
+    container.append(moviePlot);
+
     if (data.Poster) {
         const moviePoster = document.createElement("img");
         moviePoster.setAttribute("src", data.Poster);
@@ -47,15 +52,34 @@ function displayInfo(data) {
 // http://www.omdbapi.com/?apikey=[yourkey]&
 
 //gets data for daily trending movies tmdb function works but needs to display data
-// const options = {
-//     method: 'GET',
-//     headers: {
-//       accept: 'application/json',
-//       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMWM5NWZiNjRiYzU2ZWVjMjNjZWEyYTA3YzI3MWNkMCIsInN1YiI6IjY1YzAyYWU2OTA3ZjI2MDE2NjcyMDdlNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PVPmnP3uVIyb5c2yi1vziA2rd_46OnxHylFi4N3_-zs'
-//     }
-//   };
+const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMWM5NWZiNjRiYzU2ZWVjMjNjZWEyYTA3YzI3MWNkMCIsInN1YiI6IjY1YzAyYWU2OTA3ZjI2MDE2NjcyMDdlNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PVPmnP3uVIyb5c2yi1vziA2rd_46OnxHylFi4N3_-zs'
+    }
+  };
 
-//   fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)
-//     .then(response => response.json())
-//     .then(response => console.log(response))
-//     .catch(err => console.error(err));
+  fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
+
+
+    function displayResults(data) {
+        container.innerHTML = "";
+    
+        movieTitle.textContent = data.Title;
+    
+        const movieYear = document.createElement('p');
+        movieYear.textContent = data.Year;
+    
+        container.append(movieYear);
+    
+        if (data.Poster) {
+            const moviePoster = document.createElement("img");
+            moviePoster.setAttribute("src", data.Poster);
+            container.append(moviePoster);
+        }
+    }
+    

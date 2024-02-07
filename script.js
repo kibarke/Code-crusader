@@ -33,7 +33,7 @@ function displayInfo(data) {
     movieYear.textContent = data.Year;
 
     container.append(movieYear);
-    
+
     const moviePlot = document.createElement('p');
     moviePlot.textContent = data.Plot;
 
@@ -55,15 +55,17 @@ function displayInfo(data) {
 const options = {
     method: 'GET',
     headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMWM5NWZiNjRiYzU2ZWVjMjNjZWEyYTA3YzI3MWNkMCIsInN1YiI6IjY1YzAyYWU2OTA3ZjI2MDE2NjcyMDdlNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PVPmnP3uVIyb5c2yi1vziA2rd_46OnxHylFi4N3_-zs'
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMWM5NWZiNjRiYzU2ZWVjMjNjZWEyYTA3YzI3MWNkMCIsInN1YiI6IjY1YzAyYWU2OTA3ZjI2MDE2NjcyMDdlNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PVPmnP3uVIyb5c2yi1vziA2rd_46OnxHylFi4N3_-zs'
     }
-  };
+};
 
-  fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)
+fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
 
-
-    
+fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=a1c95fb64bc56eec23cea2a07c271cd0')
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));

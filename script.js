@@ -43,12 +43,12 @@ fetch(`https://api.themoviedb.org/3/search/movie?query=Matrix&include_adult=fals
         moviesContainer.appendChild(movieCard);
 
     } else {
-        moviesContainer.innerHTML = 'No results found.'
+        moviesContainer.innerHTML.text = 'No results found.'
     }  
 })
-.catch(error => {
-    console.error('Error:', error);
-});
+// .catch(error => {
+//     console.error('Error:', error);
+// });
 //fetch fucntion gets movie title user seaches for
 submitBtn.addEventListener('click', function () {
     const URL = 'https://www.omdbapi.com/?apikey=' + APIKey + '&t=' + inputTitle.value;

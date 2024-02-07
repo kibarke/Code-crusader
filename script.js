@@ -16,7 +16,7 @@ headers: {
 }
 
 // Omdb 
-const APIKey = '32ef5c0e';
+// const APIKey = '32ef5c0e';
 const apiUrl = 'http://www.omdbapi.com/?i=tt3896198&apikey=32ef5c0e';
 
 // const searchKeyword = userScore ignore this for now
@@ -43,7 +43,7 @@ fetch(`https://api.themoviedb.org/3/search/movie?query=Matrix&include_adult=fals
         moviesContainer.appendChild(movieCard);
 
     } else {
-        moviesContainer.innerHTML = '<p>No results found.</p>'
+        moviesContainer.innerHTML = 'No results found.'
     }  
 })
 .catch(error => {
@@ -94,7 +94,7 @@ function displayInfo(data) {
 // http://www.omdbapi.com/?apikey=[yourkey]&
 
 //gets data for daily trending movies tmdb function works but needs to display data
-const options = {
+const optionss = {
     method: 'GET',
     headers: {
       accept: 'application/json',
@@ -123,6 +123,12 @@ const options = {
             moviePoster.setAttribute("src", data.Poster);
             container.append(moviePoster);
         }
-    }
+    };
     
     
+    // var img = new Image();
+    // img.src = 'https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/233591/ARG_Adv1Sheet4_CMP439_RGB_2.jpg';
+    // img.onclick = function() {
+    //     window.location.href = 'https://www.fandango.com/argylle-2024-233591/movie-overview';
+    // };
+    // document.body.appendChild(img);

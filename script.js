@@ -8,6 +8,7 @@ const APIKey = '32ef5c0e';
 // const apiUrl = 'http://www.omdbapi.com/?i=tt3896198&apikey=32ef5c0e';
 
 
+
 const apiUrl = 'http://www.omdbapi.com/?i=tt3896198&apikey=32ef5c0e';
 
 
@@ -16,6 +17,7 @@ const tmdbKey = 'd7fd913642846f5e8a877bee8f5fdc5e';
 
 // Access Token
 // eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkN2ZkOTEzNjQyODQ2ZjVlOGE4NzdiZWU4ZjVmZGM1ZSIsInN1YiI6IjY1YmVjNzJjMWRiYzg4MDE3YzFkNjJkMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.H6s65fxuHSM3r3Qc894efns9UoJy9Z3uLzFqo45nVMU
+
 //fetch fucntion gets movie title user seaches for
 submitBtn.addEventListener('click', function () {
     const URL = 'https://www.omdbapi.com/?apikey=' + APIKey + '&t=' + inputTitle.value;
@@ -33,11 +35,10 @@ submitBtn.addEventListener('click', function () {
 });
 
 
-
-
 // displays users input
 function displayInfo(data) {
     container.innerHTML = "";
+
 
 
     movieTitle.textContent = data.Title;
@@ -57,6 +58,19 @@ function displayInfo(data) {
     container.append(moviePlot);
 
 
+=======
+    movieTitle.textContent = data.Title;
+
+    const movieYear = document.createElement('p');
+    movieYear.textContent = data.Year;
+
+    container.append(movieYear);
+
+    const moviePlot = document.createElement('p');
+    moviePlot.textContent = data.Plot;
+
+    container.append(moviePlot);
+
     if (data.Poster) {
         const moviePoster = document.createElement("img");
         moviePoster.setAttribute("src", data.Poster);
@@ -67,8 +81,15 @@ function displayInfo(data) {
 
 
 
+
 // http://img.omdbapi.com/?apikey=[yourkey]&
 
+
+// http://www.omdbapi.com/?apikey=[yourkey]&
+
+
+=======
+// http://img.omdbapi.com/?apikey=[yourkey]&
 
 // http://www.omdbapi.com/?apikey=[yourkey]&
 
@@ -82,14 +103,10 @@ const options = {
     }
   };
 
-
   fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
-
-
-
 
     function displayResults(data) {
         container.innerHTML = "";
@@ -101,10 +118,20 @@ const options = {
    
         container.append(movieYear);
    
+
+    function displayResults(data) {
+        container.innerHTML = "";
+    
+        movieTitle.textContent = data.Title;
+    
+        const movieYear = document.createElement('p');
+        movieYear.textContent = data.Year;
+    
+        container.append(movieYear);
+    
         if (data.Poster) {
             const moviePoster = document.createElement("img");
             moviePoster.setAttribute("src", data.Poster);
             container.append(moviePoster);
         }
     }
-   

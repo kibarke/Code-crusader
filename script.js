@@ -23,6 +23,13 @@ const apiUrl = 'http://www.omdbapi.com/?i=tt3896198&apikey=32ef5c0e';
 
 const tmdbKey = 'd7fd913642846f5e8a877bee8f5fdc5e';
 const moviesContainer = document.getElementById('moviesContainer');
+=======
+
+
+const apiUrl = 'http://www.omdbapi.com/?i=tt3896198&apikey=32ef5c0e';
+
+
+const tmdbKey = 'd7fd913642846f5e8a877bee8f5fdc5e';
 
 
 // Access Token
@@ -49,9 +56,11 @@ fetch(`https://api.themoviedb.org/3/search/movie?query=Matrix&include_adult=fals
 // .catch(error => {
 //     console.error('Error:', error);
 // });
+
 //fetch fucntion gets movie title user seaches for
 submitBtn.addEventListener('click', function () {
     const URL = 'https://www.omdbapi.com/?apikey=' + APIKey + '&t=' + inputTitle.value;
+
 
     fetch(URL)
         .then(function (res) {
@@ -68,6 +77,24 @@ submitBtn.addEventListener('click', function () {
 // displays users input
 function displayInfo(data) {
     container.innerHTML = "";
+
+
+
+    movieTitle.textContent = data.Title;
+
+
+    const movieYear = document.createElement('p');
+    movieYear.textContent = data.Year;
+
+
+    container.append(movieYear);
+
+
+    const moviePlot = document.createElement('p');
+    moviePlot.textContent = data.Plot;
+
+
+    container.append(moviePlot);
 
     movieTitle.textContent = data.Title;
 
@@ -88,10 +115,15 @@ function displayInfo(data) {
     }
 }
 
+// http://img.omdbapi.com/?apikey=[yourkey]&
+
+
+// http://www.omdbapi.com/?apikey=[yourkey]&
 
 // http://img.omdbapi.com/?apikey=[yourkey]&
 
 // http://www.omdbapi.com/?apikey=[yourkey]&
+
 
 //gets data for daily trending movies tmdb function works but needs to display data
 const optionss = {
@@ -107,6 +139,16 @@ const optionss = {
     .then(response => console.log(response))
     .catch(err => console.error(err));
 
+    function displayResults(data) {
+        container.innerHTML = "";
+   
+        movieTitle.textContent = data.Title;
+   
+        const movieYear = document.createElement('p');
+        movieYear.textContent = data.Year;
+   
+        container.append(movieYear);
+   
 
     function displayResults(data) {
         container.innerHTML = "";
@@ -132,3 +174,4 @@ const optionss = {
     //     window.location.href = 'https://www.fandango.com/argylle-2024-233591/movie-overview';
     // };
     // document.body.appendChild(img);
+    }

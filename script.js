@@ -5,8 +5,7 @@ const movieTitle = document.querySelector('#movieTitle');
 const container = document.querySelector('.container');
 const moviesContainer = document.getElementById("movies")
 const APIKey = '32ef5c0e';
-// const city = 'New York City';
-// const apiUrl = 'http://www.omdbapi.com/?i=tt3896198&apikey=32ef5c0e';
+
 
 //fetch fucntion gets movie title user seaches for
 submitBtn.addEventListener('click', function () {
@@ -50,9 +49,7 @@ function displayInfo(data) {
 }
 
 
-// http://img.omdbapi.com/?apikey=[yourkey]&
 
-// http://www.omdbapi.com/?apikey=[yourkey]&
 
 //gets data for daily trending movies tmdb function works but needs to display data
 const options = {
@@ -69,20 +66,4 @@ const options = {
     .catch(err => console.error(err));
 
 
-    function displayResults(data) {
-        container.innerHTML = "";
-    
-        movieTitle.textContent = data.Title;
-    
-        const movieYear = document.createElement('p');
-        movieYear.textContent = data.Year;
-    
-        container.append(movieYear);
-    
-        if (data.Poster) {
-            const moviePoster = document.createElement("img");
-            moviePoster.setAttribute("src", data.Poster);
-            container.append(moviePoster);
-        }
-    }
     

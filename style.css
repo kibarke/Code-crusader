@@ -1,9 +1,11 @@
 body {
     color: #006300;
     background-color: rgb(64, 13, 88);
-   
-}  
-
+   height: 100vh;
+   display: grid;
+   place-items: center;
+}
+ 
 .button {
     color: white;
 }
@@ -36,8 +38,7 @@ input {
     font-size: 1.25rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-
+    justify-content: space-between; 
     margin: 0 1.25rem; 
     padding: 0 2rem;
     padding-top: 50px;
@@ -54,10 +55,14 @@ input {
     padding-top: 50px;
 }
 
+.movie-rec {
+    align-items: row;
+    display: flex;
+    justify-content: space-between;
+}
+
 .nowplaying {
     padding: 25px;
-    align-items: right;
-
 }
 
 .nowplaying #Argylle {
@@ -84,12 +89,13 @@ input {
 
 .comingsoon #Frankenstein {
     padding: 10px;
-    height: 40%;
+    margin-top: 70px;
+    height: auto;
 }
 
 .comingsoon #Dunetwo {
     padding: 15px;
-    margin-top: 15px;
+    margin-top: auto;
 }
 
 .oscarmovieposter {
@@ -104,7 +110,6 @@ input {
 
 .oscarmovieposter #Oppenheimer {
     padding: 10px;
-    height: 40%;
 }
 
 .oscarmovieposter #Barbie {

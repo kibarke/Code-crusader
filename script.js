@@ -9,10 +9,10 @@ const APIKey = '32ef5c0e';
 
 const options = {
     method: 'GET',
-headers: {
-  accept: 'application/json',
-  Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkN2ZkOTEzNjQyODQ2ZjVlOGE4NzdiZWU4ZjVmZGM1ZSIsInN1YiI6IjY1YmVjNzJjMWRiYzg4MDE3YzFkNjJkMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.H6s65fxuHSM3r3Qc894efns9UoJy9Z3uLzFqo45nVMU'
-}
+    headers: {
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkN2ZkOTEzNjQyODQ2ZjVlOGE4NzdiZWU4ZjVmZGM1ZSIsInN1YiI6IjY1YmVjNzJjMWRiYzg4MDE3YzFkNjJkMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.H6s65fxuHSM3r3Qc894efns9UoJy9Z3uLzFqo45nVMU'
+    }
 }
 
 // Omdb 
@@ -26,32 +26,12 @@ const tmdbKey = 'd7fd913642846f5e8a877bee8f5fdc5e';
 //=======
 
 
-
-
 // Access Token
 // eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkN2ZkOTEzNjQyODQ2ZjVlOGE4NzdiZWU4ZjVmZGM1ZSIsInN1YiI6IjY1YmVjNzJjMWRiYzg4MDE3YzFkNjJkMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.H6s65fxuHSM3r3Qc894efns9UoJy9Z3uLzFqo45nVMU
 
-fetch(`https://api.themoviedb.org/3/search/movie?query=Matrix&include_adult=false&language=en-US&page=1`, options)
-.then(response => response.json())
-.then(data => {
-    console.log(data);
-    if (data.Search) {
-        const movieCard = document.createElement('div');
-        movieCard.classList.add('movie-card');
-        movieCard.innerHTML = `
-        <h3>${movie.Title}</h3>
-        <p>${movie.year}</p>
-        <p>${movie.userScore}</p>
-        `;
-        moviesContainer.appendChild(movieCard);
 
-    } else {
-        moviesContainer.innerHTML.text = 'No results found.'
-    }  
-})
-// .catch(error => {
-//     console.error('Error:', error);
-// });
+
+
 
 //fetch fucntion gets movie title user seaches for
 submitBtn.addEventListener('click', function () {
@@ -68,7 +48,6 @@ submitBtn.addEventListener('click', function () {
             displayInfo(data)
         });
 });
-
 
 // displays users input
 function displayInfo(data) {
@@ -92,19 +71,30 @@ function displayInfo(data) {
 
     container.append(moviePlot);
 
-
-
     if (data.Poster) {
         const moviePoster = document.createElement("img");
         moviePoster.setAttribute("src", data.Poster);
         container.append(moviePoster);
     }
 }
+// let highScores = JSON.parse(localStorage.getItem('highscores')) || [];
 
-// http://img.omdbapi.com/?apikey=[yourkey]&
+// function saveData() {
+//             // Get the data you want to save
+//             const data = inputTitle;
+
+//             // Save the data to localStorage
+//             localStorage.setItem("click", data);
+
+//             console.log("Data saved successfully!");
+//           }
+//           function updateScoreboard() {
+//             const submit = document.getElementById("submit");
+
+//             submit.innerHTML = "";
+//          }
 
 
-// http://www.omdbapi.com/?apikey=[yourkey]&
 
 
 
@@ -125,5 +115,9 @@ fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)
 
 fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=a1c95fb64bc56eec23cea2a07c271cd0')
     .then(response => response.json())
+    .then()
     .then(response => console.log(response))
     .catch(err => console.error(err));
+
+
+

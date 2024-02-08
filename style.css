@@ -1,6 +1,6 @@
 
 body {
-    color: #006300;
+    color: white;
     background-color: rgb(64, 13, 88);
    
 }  
@@ -43,12 +43,6 @@ input {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-<<<<<<< HEAD
-    /* margin: 0 1.25rem; */
-   /* padding: 0 2rem;
-    /* padding-top: 50px; 
-} */
-=======
 
     margin: 0 1.25rem; 
     padding: 0 2rem;
@@ -59,7 +53,6 @@ input {
     padding: 0 2rem;
     padding-top: 50px; 
 } 
->>>>>>> a9cd699e0a7670f191609066b3ad769a33ce881a
 
 .col {
     font-size: 1.25rem;

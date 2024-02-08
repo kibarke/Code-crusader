@@ -22,14 +22,10 @@ const apiUrl = 'http://www.omdbapi.com/?i=tt3896198&apikey=32ef5c0e';
 // const searchKeyword = userScore ignore this for now
 
 const tmdbKey = 'd7fd913642846f5e8a877bee8f5fdc5e';
-const moviesContainer = document.getElementById('moviesContainer');
-=======
+//const moviesContainer = document.getElementById('moviesContainer');
+//=======
 
 
-const apiUrl = 'http://www.omdbapi.com/?i=tt3896198&apikey=32ef5c0e';
-
-
-const tmdbKey = 'd7fd913642846f5e8a877bee8f5fdc5e';
 
 
 // Access Token
@@ -96,19 +92,7 @@ function displayInfo(data) {
 
     container.append(moviePlot);
 
-    movieTitle.textContent = data.Title;
 
-    const movieYear = document.createElement('p');
-    movieYear.textContent = data.Year;
-
-    container.append(movieYear);
-
-    const moviePlot = document.createElement('p');
-    moviePlot.textContent = data.Plot;
-
-
-
-    container.append(moviePlot);
 
     if (data.Poster) {
         const moviePoster = document.createElement("img");

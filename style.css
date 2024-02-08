@@ -1,11 +1,13 @@
 
 body {
-    color: #006300;
+    color: white;
     background-color: rgb(64, 13, 88);
-   
+   font-color: ;
 }  
 
-
+.button {
+    color: white;
+}
 .center {
     margin: auto;
     width: 50%

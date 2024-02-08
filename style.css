@@ -53,3 +53,61 @@ input {
     padding: 0 2rem;
     padding-top: 50px;
 }
+
+.nowplaying {
+    padding: 25px;
+    align-items: right;
+
+}
+
+.nowplaying #Argylle {
+    padding: 22px;
+}
+
+.nowplaying #Wonka {
+    padding: 20px;
+}
+
+.nowplaying #Marvels {
+    padding: 20px;
+}
+
+.comingsoon {
+    padding: 25px;
+    align-items: right;
+
+}
+
+.comingsoon #Bob {
+    padding: 10px;
+}
+
+.comingsoon #Frankenstein {
+    padding: 10px;
+    height: 40%;
+}
+
+.comingsoon #Dunetwo {
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.oscarmovieposter {
+    padding: 25px;
+    align-items: right;
+
+}
+
+.oscarmovieposter #Spiderverse {
+    padding: 10px;
+}
+
+.oscarmovieposter #Oppenheimer {
+    padding: 10px;
+    height: 40%;
+}
+
+.oscarmovieposter #Barbie {
+    padding: 15px;
+    margin-top: 15px;
+}

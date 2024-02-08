@@ -118,6 +118,3 @@ fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=a1c95fb64bc56eec
     .then()
     .then(response => console.log(response))
     .catch(err => console.error(err));
-
-
-

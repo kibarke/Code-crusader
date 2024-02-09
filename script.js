@@ -65,6 +65,64 @@ function displayInfo(data) {
     }
 }
 
+// If the user can't find a movie there should a console log saying error
+
+fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Network response was not ok.');
+        }
+    })
+    .then(response => console.log(response))
+    .catch(err => showErrorModal('Error fetching trending movies: ' + err.message));
+
+fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=a1c95fb64bc56eec23cea2a07c271cd0')
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Network response was not ok.');
+        }
+    })
+    .then(response => console.log(response))
+    .catch(err => showErrorModal('Error fetching weekly trending movies: ' + err.message));
+
+    function showErrorModal(message) {
+        // Create modal overlay
+        const modalOverlay = document.createElement('div');
+        modalOverlay.classList.add('modal-overlay');
+    
+        // Create modal content
+        const modalContent = document.createElement('div');
+        modalContent.classList.add('modal-content');
+        
+        // Create error message
+        const errorMessage = document.createElement('p');
+        errorMessage.textContent = message;
+    
+        // Create close button
+        const closeButton = document.createElement('button');
+        closeButton.textContent = 'Close';
+        closeButton.addEventListener('click', closeModal);
+    
+        // Append error message and close button to modal content
+        modalContent.appendChild(errorMessage);
+        modalContent.appendChild(closeButton);
+    
+        // Append modal content to modal overlay
+        modalOverlay.appendChild(modalContent);
+    
+        // Append modal overlay to body
+        document.body.appendChild(modalOverlay);
+    
+        // Function to close the modal
+        function closeModal() {
+            document.body.removeChild(modalOverlay);
+        }
+    }
+    
 
 
 //gets data for daily trending movies tmdb function works but needs to display data
@@ -99,3 +157,5 @@ fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=a1c95fb64bc56eec
     .then()
     .then(response => console.log(response))
     .catch(err => showErrorModal('Error fetching weekly trending movies: ' + err.message));
+
+    addEventListener(click) function ()

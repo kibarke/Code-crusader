@@ -5,7 +5,22 @@ body {
    display: grid;
    place-items: center;
 }
- 
+
+.col-s6 #title {
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#movieTitle {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 /* Modal overlay styles */
 .container #errorModal {
     display: none;
@@ -44,7 +59,6 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
-
 
 
 .button {

@@ -157,5 +157,3 @@ fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=a1c95fb64bc56eec
     .then()
     .then(response => console.log(response))
     .catch(err => showErrorModal('Error fetching weekly trending movies: ' + err.message));
-
-    addEventListener(click) function ()

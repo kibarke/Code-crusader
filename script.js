@@ -6,7 +6,6 @@ const container = document.querySelector('.container');
 const moviesContainer = document.getElementById("movies")
 const APIKey = '32ef5c0e';
 
-
 const options = {
     method: 'GET',
     headers: {
@@ -19,18 +18,13 @@ const options = {
 // const APIKey = '32ef5c0e';
 const apiUrl = 'http://www.omdbapi.com/?i=tt3896198&apikey=32ef5c0e';
 
-// const searchKeyword = userScore ignore this for now
 
 const tmdbKey = 'd7fd913642846f5e8a877bee8f5fdc5e';
 //const moviesContainer = document.getElementById('moviesContainer');
-//=======
 
 
 // Access Token
 // eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkN2ZkOTEzNjQyODQ2ZjVlOGE4NzdiZWU4ZjVmZGM1ZSIsInN1YiI6IjY1YmVjNzJjMWRiYzg4MDE3YzFkNjJkMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.H6s65fxuHSM3r3Qc894efns9UoJy9Z3uLzFqo45nVMU
-
-
-
 
 
 //fetch fucntion gets movie title user seaches for
@@ -52,22 +46,15 @@ submitBtn.addEventListener('click', function () {
 // displays users input
 function displayInfo(data) {
     container.innerHTML = "";
-
-
-
     movieTitle.textContent = data.Title;
-
 
     const movieYear = document.createElement('p');
     movieYear.textContent = data.Year;
 
-
     container.append(movieYear);
-
 
     const moviePlot = document.createElement('p');
     moviePlot.textContent = data.Plot;
-
 
     container.append(moviePlot);
 
@@ -77,26 +64,65 @@ function displayInfo(data) {
         container.append(moviePoster);
     }
 }
-// let highScores = JSON.parse(localStorage.getItem('highscores')) || [];
 
-// function saveData() {
-//             // Get the data you want to save
-//             const data = inputTitle;
+// If the user can't find a movie there should a console log saying error
 
-//             // Save the data to localStorage
-//             localStorage.setItem("click", data);
+fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Network response was not ok.');
+        }
+    })
+    .then(response => console.log(response))
+    .catch(err => showErrorModal('Error fetching trending movies: ' + err.message));
 
-//             console.log("Data saved successfully!");
-//           }
-//           function updateScoreboard() {
-//             const submit = document.getElementById("submit");
+fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=a1c95fb64bc56eec23cea2a07c271cd0')
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Network response was not ok.');
+        }
+    })
+    .then(response => console.log(response))
+    .catch(err => showErrorModal('Error fetching weekly trending movies: ' + err.message));
 
-//             submit.innerHTML = "";
-//          }
-
-
-
-
+    function showErrorModal(message) {
+        // Create modal overlay
+        const modalOverlay = document.createElement('div');
+        modalOverlay.classList.add('modal-overlay');
+    
+        // Create modal content
+        const modalContent = document.createElement('div');
+        modalContent.classList.add('modal-content');
+        
+        // Create error message
+        const errorMessage = document.createElement('p');
+        errorMessage.textContent = message;
+    
+        // Create close button
+        const closeButton = document.createElement('button');
+        closeButton.textContent = 'Close';
+        closeButton.addEventListener('click', closeModal);
+    
+        // Append error message and close button to modal content
+        modalContent.appendChild(errorMessage);
+        modalContent.appendChild(closeButton);
+    
+        // Append modal content to modal overlay
+        modalOverlay.appendChild(modalContent);
+    
+        // Append modal overlay to body
+        document.body.appendChild(modalOverlay);
+    
+        // Function to close the modal
+        function closeModal() {
+            document.body.removeChild(modalOverlay);
+        }
+    }
+    
 
 
 //gets data for daily trending movies tmdb function works but needs to display data
@@ -108,13 +134,26 @@ const optionss = {
     }
 };
 
+function showErrorModal(message) {
+    const modal = document.createElement('div');
+    modal.classList.add('error-modal');
+    modal.textContent = message;
+    document.body.appendChild(modal);
+
+    // Close the modal when clicked anywhere on the document
+    document.addEventListener('click', function closeModal() {
+        modal.remove();
+        document.removeEventListener('click', closeModal);
+    });
+}
+
 fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)
     .then(response => response.json())
     .then(response => console.log(response))
-    .catch(err => console.error(err));
+    .catch(err => showErrorModal('Error fetching trending movies: ' + err.message));
 
 fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=a1c95fb64bc56eec23cea2a07c271cd0')
     .then(response => response.json())
     .then()
     .then(response => console.log(response))
-    .catch(err => console.error(err));
+    .catch(err => showErrorModal('Error fetching weekly trending movies: ' + err.message));

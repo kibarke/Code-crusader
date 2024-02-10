@@ -15,48 +15,56 @@
 
 
 </head>
-  <body>
+
+<body>
+  <div class="text-align: center">
+    <div class="row">
+      <div class="col s6">
+        <h2>Studio Productions</h2>
+        <h4>SEARCH MOVIE TITLE</h4>
+        <img src="https://cdn.pixabay.com/photo/2019/04/24/21/55/cinema-4153289_640.jpg" alt="cover photo"> 
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="movieTitle"></div>
+  </div>
+
+  <section class="container">
     <div class="text-align: center">
       <div class="row">
         <div class="col s6">
-          <h2>Studio Productions</h2>
-          <h4>SEARCH MOVIE TITLE</h4>
-          <img src="https://cdn.pixabay.com/photo/2019/04/24/21/55/cinema-4153289_640.jpg">
+          <input id="title" type="text" class="form-control" />
+          <button class="btn btn-primary">submit</button>
+
+
         </div>
       </div>
     </div>
+  </section>
+  <section class="DOMContentLoaded">
 
-    <div class="container">
-      <div id="movieTitle"></div>
-    </div>
+  </section>
 
-    <section class="container">
-      <div class="text-align: center">
-        <div class="row">
-          <div class="col s6">
-            <input id="title" type="text" class="form-control" />
-            <button class="btn btn-primary">submit</button>
+  <div class="row">
+    <div class="col s12"></div>
+  </div>
 
+  <div class="row">
+    <div class="col s12"></div>
+    <button class="btn btn-secondary" id="now-playingBtn">
+      now playing
+      <div class="results" id="tmdbtitle"></div>
+      <div class="container">
+        <div class="col-lg-6"></div>
+        <h1>Studio Productions</h1>
+        <p>Studio Productios dedicate their time to make movies easy and cheap for you and your loved ones.</p>
+        <div class="movie-rec">
+          <h3>Buy Tickets Now!</h3>
 
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="row">
-      <div class="col s12"></div>
-    </div>
-
-    <div class="row">
-      <div class="col s12"></div>
-
-    <div class="container">
-      <div class="col-lg-6"></div>
-      <h1>Studio Productions</h1>
-      <p>Studio Productios dedicate their time to make movies easy and cheap for you and your loved ones.</p>
-      <div class="movie-rec">
-        <h3>Buy Tickets Now!</h3>
-        <div class="nowplaying">
+          <br>
+          <br>
           <img id="Argylle"
             src="https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/233591/ARG_Adv1Sheet4_CMP439_RGB_2.jpg"
             alt="Argylle">
@@ -71,8 +79,10 @@
         <div class="comingsoon">
           <img id="Bob" src="https://media.hotpress.com/uploads/2023/12/05143913/bob-marley.jpg"
             alt="Bob-Marley: One Love Poster">
-          <img id="Frankenstein" src="https://pbs.twimg.com/media/F9TB1tNaMAAEQew.jpg:large" alt="Lisa Frankenstein Poster">
-          <img id="Dunetwo" src="https://www.dvdsreleasedates.com/posters/300/D/Dune-Part-Two-2023.jpg" alt="Dune 2 Poster">
+          <img id="Frankenstein" src="https://pbs.twimg.com/media/F9TB1tNaMAAEQew.jpg:large"
+            alt="Lisa Frankenstein Poster">
+          <img id="Dunetwo" src="https://www.dvdsreleasedates.com/posters/300/D/Dune-Part-Two-2023.jpg"
+            alt="Dune 2 Poster">
         </div>
 
 
@@ -80,16 +90,18 @@
         <div class="oscarmovieposter">
           <img id="Spiderverse" src="https://posterspy.com/wp-content/uploads/2023/04/AcrossTheSpiderverse.jpg"
             alt="AcrossTheSpiderverse-Fan-made">
-          <img id="Oppenheimer" src="https://posterspy.com/wp-content/uploads/2023/08/oppenheimer-poster.jpg" alt="Oppenheimer-Fan-made">
-          <img id="Barbie" src="https://posterspy.com/wp-content/uploads/2023/08/barbie_car_txt.jpg" alt="Barbie-Fan-Made">
+          <img id="Oppenheimer" src="https://posterspy.com/wp-content/uploads/2023/08/oppenheimer-poster.jpg"
+            alt="Oppenheimer-Fan-made">
+          <img id="Barbie" src="https://posterspy.com/wp-content/uploads/2023/08/barbie_car_txt.jpg"
+            alt="Barbie-Fan-Made">
         </div>
       </div>
 
-<!-- materialize -->
+      <!-- materialize -->
       <script src="./script.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
-  </body>
+</body>
 
 </html>

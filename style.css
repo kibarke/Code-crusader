@@ -1,10 +1,14 @@
 body {
-    color: #006300;
+    color: white;
     background-color: rgb(64, 13, 88);
    
 }  
 
 .button {
+    background-color: white;
+}
+
+#title {
     color: white;
 }
 
